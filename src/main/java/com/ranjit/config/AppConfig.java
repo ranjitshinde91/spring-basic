@@ -32,10 +32,10 @@ public class AppConfig {
     @Autowired
     private Environment env;
 
-    @Bean @Scope("prototype")
-    public Game game(){
-        return new Game(mi(), csk());
-    }
+//    @Bean @Scope("prototype")
+//    public Game game(){
+//        return new Game(mi(), csk());
+//    }
 
     @Bean
     public Team mi(){

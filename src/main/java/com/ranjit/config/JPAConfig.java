@@ -22,6 +22,7 @@ import java.util.Properties;
 @Configuration
 @PropertySource("classpath:prod.properties")
 @Import(AppConfig.class)
+@Profile("test")
 public class JPAConfig {
     @Autowired
     private Environment env;

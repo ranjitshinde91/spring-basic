@@ -1,38 +1,46 @@
 package com.ranjit.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Game {
-    private Team homeTeam;
-    private Team awayTeam;
+    @Autowired @Qualifier("mi")
+    private Team home;
+
+    @Autowired @Qualifier("csk")
+    private Team away;
 
     public Game() {
     }
 
-    public Game(Team homeTeam, Team awayTeam) {
-        this.homeTeam = homeTeam;
-        this.awayTeam = awayTeam;
+    public Game(Team home, Team away) {
+        this.home = home;
+        this.away = away;
     }
 
-    public Team getHomeTeam() {
-        return homeTeam;
+    public Team getHome() {
+        return home;
     }
 
-    public void setHomeTeam(Team homeTeam) {
-        this.homeTeam = homeTeam;
+    public void setHome(Team home) {
+        this.home = home;
     }
 
-    public Team getAwayTeam() {
-        return awayTeam;
+    public Team getAway() {
+        return away;
     }
 
-    public void setAwayTeam(Team awayTeam) {
-        this.awayTeam = awayTeam;
+    public void setAway(Team away) {
+        this.away = away;
     }
 
     @Override
     public String toString() {
         return "Game{" +
-                "homeTeam=" + homeTeam +
-                ", awayTeam=" + awayTeam +
+                "home=" + home +
+                ", away=" + away +
                 '}';
     }
 }

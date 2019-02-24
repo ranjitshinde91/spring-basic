@@ -20,13 +20,13 @@ public class XmlConfigApplicationContext {
         System.out.println(csk.getName());
 
         Game game = context.getBean("game", Game.class);
-        game.setAwayTeam(mi);
-        game.setHomeTeam(csk);
+        game.setAway(mi);
+        game.setHome(csk);
         System.out.println(game);
 
         Game game2 = context.getBean("game", Game.class);
-        game2.setAwayTeam(csk);
-        game2.setHomeTeam(mi);
+        game2.setAway(csk);
+        game2.setHome(mi);
         System.out.println(game2);
 
         NumberFormat cf = context.getBean("cf", NumberFormat.class);

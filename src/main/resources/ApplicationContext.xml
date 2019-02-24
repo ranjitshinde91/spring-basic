@@ -5,17 +5,17 @@
 
 
     <bean id="game" class="com.ranjit.model.Game">
-        <property name="homeTeam" ref="mi"></property>
-        <property name="awayTeam" ref="csk"></property>
+        <property name="home" ref="home"></property>
+        <property name="away" ref="away"></property>
 
     </bean>
 
-    <bean id="mi" class="com.ranjit.model.Team">
-        <property name="name" value="mi"></property>
+    <bean id="home" class="com.ranjit.model.Team">
+        <property name="name" value="home"></property>
     </bean>
 
-    <bean id="csk" class="com.ranjit.model.Team">
-        <property name="name" value="csk"></property>
+    <bean id="away" class="com.ranjit.model.Team">
+        <property name="name" value="away"></property>
     </bean>
 
     <bean id="cf" class="java.text.NumberFormat" factory-method="getCurrencyInstance">
