@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="game" class="com.ranjit.model.Game">
+        <property name="homeTeam" ref="mi"></property>
+        <property name="awayTeam" ref="csk"></property>
+
+    </bean>
+
+    <bean id="mi" class="com.ranjit.model.Team">
+        <property name="name" value="mi"></property>
+    </bean>
+
+    <bean id="csk" class="com.ranjit.model.Team">
+        <property name="name" value="csk"></property>
+    </bean>
+
+    <bean id="cf" class="java.text.NumberFormat" factory-method="getCurrencyInstance">
+    </bean>
+
+    <bean id="factory" class="javax.xml.parsers.DocumentBuilderFactory" factory-method="newInstance"></bean>
+
+    <bean id="docBuilder" class="javax.xml.parsers.DocumentBuilder" factory-bean="factory" factory-method="newDocumentBuilder">
+
+    </bean>
+
+</beans>

@@ -1,0 +1,1 @@
+CREATE TABLE account(id INT PRIMARY Key, balance DECIMAL NOT NULL )
