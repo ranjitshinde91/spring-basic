@@ -1,9 +1,15 @@
 package com.ranjit.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+@Entity
+@Table(name = "account")
 public class Account {
+    @Id
     private int id;
     private BigDecimal balance;
 

@@ -13,34 +13,34 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.math.BigDecimal;
 import java.util.List;
 
-import static org.assertj.core.api.Java6Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = AppConfig.class)
 @ActiveProfiles("test")
-public class JdbcCrudRepositoryTest {
+public class JdbcAccountRepositoryTest {
 
     @Autowired
-    private CrudRepository<Account, Integer> repository;
+    private AccountRepository jdbcAccountRepository;
 
 
     @Test
     public void list() {
-        List<Account> list = repository.findAll();
+        List<Account> list = jdbcAccountRepository.findAll();
         assertThat(list).hasSize(3);
     }
 
     @Test
     public void get(){
-        Account account =  repository.findById(1);
+        Account account =  jdbcAccountRepository.findById(1);
         assertThat(account).isEqualTo(new Account(1, new BigDecimal(100)));
     }
 
     @Test
     @Ignore
     public void delete() {
-        int n= repository.delete(1);
+        int n= jdbcAccountRepository.delete(1);
         assertThat(n).isEqualTo(1);
     }
 }

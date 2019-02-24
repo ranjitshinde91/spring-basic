@@ -1,7 +1,7 @@
 package com.ranjit.config;
 
-import com.ranjit.dao.CrudRepository;
-import com.ranjit.dao.JdbcCrudRepository;
+import com.ranjit.dao.AccountRepository;
+import com.ranjit.dao.JdbcAccountRepository;
 import com.ranjit.model.Game;
 import com.ranjit.model.MyBean;
 import com.ranjit.model.Team;
@@ -60,8 +60,8 @@ public class AppConfig {
 
     @Bean
     @Profile("test")
-    public CrudRepository jdbcAccountRepository(){
-        return new JdbcCrudRepository(dataSource());
+    public AccountRepository jdbcAccountRepository(){
+        return new JdbcAccountRepository(dataSource());
     }
 
     @Bean
