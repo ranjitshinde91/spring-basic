@@ -8,6 +8,7 @@ import com.ranjit.model.Team;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
@@ -16,6 +17,7 @@ import java.text.NumberFormat;
 
 @Configuration
 @EnableAspectJAutoProxy
+@EnableJpaRepositories(basePackages = "com.ranjit.dao")
 @ComponentScan (basePackages = "com.ranjit")
 public class AppConfig {
 

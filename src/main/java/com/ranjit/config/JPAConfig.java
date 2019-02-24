@@ -2,18 +2,19 @@ package com.ranjit.config;
 
 import com.ranjit.dao.AccountRepository;
 import com.ranjit.dao.JpaAccountRepository;
-import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.stereotype.Component;
+import org.springframework.transaction.PlatformTransactionManager;
 
+import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
@@ -61,6 +62,11 @@ public class JPAConfig {
     @Bean
     public BeanPostProcessor persistenceTranslation(){
         return new PersistenceExceptionTranslationPostProcessor();
+    }
+
+    @Bean
+    public PlatformTransactionManager transactionManager(EntityManagerFactory emf){
+        return new JpaTransactionManager(emf);
     }
 
 
